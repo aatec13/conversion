@@ -17,3 +17,11 @@ def load_json(file_path):
     except json.JSONDecodeError as e:
         print(f"Error- JSON: {e}")
         return None
+    
+def save_json(file_path, data):
+    try:
+        with open(file_path, 'w') as file:
+            json.dump(data, file, indent=4)
+    except Exception as e:
+        print(f"Error- save to JSON: {e}")
+
