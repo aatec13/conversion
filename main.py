@@ -25,3 +25,11 @@ def save_json(file_path, data):
     except Exception as e:
         print(f"Error- save to JSON: {e}")
 
+def load_xml(file_path):
+    try:
+        tree = ET.parse(file_path)
+        return tree.getroot()
+    except ET.ParseError as e:
+        print(f"Error- XML: {e}")
+        return None
+
