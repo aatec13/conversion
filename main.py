@@ -33,3 +33,10 @@ def load_xml(file_path):
         print(f"Error- XML: {e}")
         return None
 
+def save_yaml(file_path, data):
+    try:
+        with open(file_path, 'w') as file:
+            yaml.dump(data, file, default_flow_style=False)
+    except Exception as e:
+        print(f"Error- save to YAML: {e}")
+
