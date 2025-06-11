@@ -40,3 +40,11 @@ def save_yaml(file_path, data):
     except Exception as e:
         print(f"Error- save to YAML: {e}")
 
+def load_xml(file_path):
+    try:
+        tree = ET.parse(file_path)
+        return tree.getroot()
+    except ET.ParseError as e:
+        print(f"Error- XML: {e}")
+        return None
+
