@@ -48,3 +48,9 @@ def load_xml(file_path):
         print(f"Error- XML: {e}")
         return None
 
+def save_xml(file_path, root):
+    try:
+        tree = ET.ElementTree(root)
+        tree.write(file_path)
+    except Exception as e:
+        print(f"Error- save to XML: {e}")
